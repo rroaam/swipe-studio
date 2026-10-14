@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/* Explicit source scan — v4 auto-detection misses these without a git root. */
+@source "./**/*.{js,jsx}";
+
+/* ROAM-branded dashboard design system. */
+@theme {
+  --color-bg: #08080a;
+  --color-surface: #111114;
+  --color-surface-2: #1a1a1f;
+  --color-border: #26262d;
+  --color-border-hover: #3a3a44;
+  --color-text: #f4f4f5;
+  --color-text-dim: #a1a1aa;
+  --color-text-muted: #6b6b75;
+  --color-accent: #b5ff4d;
+  --color-accent-hover: #c8ff6e;
+  --color-danger: #ff5c5c;
+  --color-warning: #ffb338;
+  --color-success: #34cd3f;
+  --font-display: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html, body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--color-accent); color: #000; }
+}
+
+@layer utilities {
+  .font-display { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.03em; }
+  .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+  .no-scrollbar::-webkit-scrollbar { width: 0; height: 0; display: none; }
+  .scrollbar-thin { scrollbar-width: none; -ms-overflow-style: none; }
+  .scrollbar-thin::-webkit-scrollbar { width: 0; height: 0; display: none; }
+}
